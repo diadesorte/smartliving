@@ -100,7 +100,7 @@
                   class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg"
                   href="#vantagens"
                 >
-                  Contate-nos
+                  Faça seu Orçamento
                   <br />
                   <img
                     src="https://api.iconify.design/emojione-v1:rocket.svg?height=20"
@@ -142,27 +142,38 @@
 
     <!-- app-list -->
     <template id="app-list">
-      <div v-bind="$attrs" class="flex h-screen justify-center items-center">
-        <ul class="mt-8 space-y-3 font-medium">
-          <template v-for="o in section.items">
-            <li class="flex items-start lg:col-span-1">
-              <div class="flex-shrink-0">
-                <svg
-                  class="w-5 h-5 text-indigo-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </div>
-              <p class="ml-3 leading-5 text-gray-600">{{ o.text }}</p>
-            </li>
-          </template>
-        </ul>
+      <div
+        v-bind="$attrs"
+        class="flex flex-col h-screen justify-center items-center"
+      >
+        <div>
+          <ul class="mt-8 space-y-3 font-medium">
+            <template v-for="o in section.items">
+              <li class="flex items-center lg:col-span-1">
+                <div class="flex-shrink-0">
+                  <img
+                    :src="`https://api.iconify.design/${o.icon}.svg?height=30&color=%236666ff`"
+                    alt=""
+                  />
+                </div>
+                <p class="ml-3 leading-5 text-gray-600">{{ o.text }}</p>
+              </li>
+            </template>
+          </ul>
+          <br />
+          <a
+            class="flex items-center justify-center rounded-md border border-transparent bg-blue-600 py-2 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg"
+            href="#contato"
+          >
+            Contate-nos
+            <br />
+            <img
+              src="https://api.iconify.design/emojione-v1:rocket.svg?height=20"
+              alt=""
+              class="ms-2"
+            />
+          </a>
+        </div>
       </div>
     </template>
     <script>
@@ -172,18 +183,30 @@
           const section = reactive({
             bind: { id: "vantagens" },
             items: [
-              { icon: "mdi:home", text: "Cameras e alarmes" },
               {
-                icon: "mdi:home",
+                icon: "material-symbols-light:speed-camera-rounded",
+                text: "Cameras e alarmes",
+              },
+              {
+                icon: "material-symbols:kitchen-rounded",
                 text: "Eletrodomésticos de cozinha inteligente",
               },
-              { icon: "mdi:home", text: "Climatização automática" },
               {
-                icon: "mdi:home",
+                icon: "mingcute:air-condition-open-fill",
+                text: "Climatização automática",
+              },
+              {
+                icon: "material-symbols:ambient-screen",
                 text: "Monitores domésticos inteligentes",
               },
-              { icon: "mdi:home", text: "Iluminação automatizada" },
-              { icon: "mdi:home", text: "Fechaduras digitais" },
+              {
+                icon: "majesticons:light-bulb",
+                text: "Iluminação automatizada",
+              },
+              {
+                icon: "material-symbols-light:mfg-nest-yale-lock",
+                text: "Fechaduras digitais",
+              },
             ],
           });
           return {
@@ -203,7 +226,7 @@
             class="text-white relative px-4 py-10 bg-indigo-400 shadow-lg sm:rounded-3xl sm:p-20"
           >
             <div class="text-center pb-6">
-              <h1 class="text-3xl">Contate-nos</h1>
+              <h1 class="text-3xl">Fale Conosco</h1>
 
               <p class="text-gray-200">
                 Fale conosco pelo Whatsapp, respondemos rápido.
